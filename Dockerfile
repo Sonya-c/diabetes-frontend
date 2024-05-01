@@ -1,15 +1,12 @@
-FROM python:3.12.3-slim-bullseye
+FROM python:3.9-slim
 
-RUN mkdir /front
+WORKDIR /app
 
-COPY requirements.txt /front
-
-WORKDIR /front
+COPY . .
 
 RUN pip install -r requirements.txt
 
-COPY . /front
-
+# Expose Streamlit port
 EXPOSE 8501
 
 CMD ["streamlit", "run", "app.py"]
