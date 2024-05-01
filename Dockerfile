@@ -1,9 +1,15 @@
 FROM python:3.12.3-slim-bullseye
 
-WORKDIR /home/app/
-COPY . .
+RUN mkdir /front
 
-RUN pip install --upgrade pip
+COPY requirements.txt /front
+
+WORKDIR /front
+
 RUN pip install -r requirements.txt
 
-CMD [ "streamlit", "run", "app.py" ]
+COPY . /front
+
+EXPOSE 8501
+
+CMD ["streamlit", "run", "app.py"]
