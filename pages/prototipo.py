@@ -72,4 +72,4 @@ if submitted:
 
         st.subheader("Información adicional")
 
-        st.info(f"BMI {result['BMI']:.2f}: {result["status"]}")
+        st.info(f"BMI {result['BMI']:.2f}: {result['status']}")
