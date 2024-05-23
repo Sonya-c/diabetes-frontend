@@ -1,19 +1,28 @@
+
+import base64
 import streamlit as st 
 
-with open("./assets/report.pdf", "rb") as pdf_file:
-    report = pdf_file.read()
+from utils.config import set_config 
+
+set_config("Home")
 
 st.title("Diseño e Implementaión de una Aplicación para el Diagnostico y Detecciónn Temprana de Diabetes Tipo 2")
 st.write("Sonya Castro; Jeffrey Felix; Dario Mejia; Wilson Nieto; Eduardo Angulo.")
 
-st.download_button(
-    'Download PDF',
-    data=report,
-    file_name="report.pdf",
-    mime='application/octet-stream'
-)
-
 st.divider()
 
+# st.download_button(
+#     'Download PDF',
+#     data=report,
+#     file_name="report.pdf",
+#     mime='application/octet-stream'
+# )
+
 st.subheader("Abstract")
-st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi congue porta dapibus. Etiam auctor dolor ut purus consectetur sagittis. Proin mollis eleifend ex, non luctus ex maximus quis. Sed ornare felis eget nulla elementum, vel blandit neque pellentesque. Mauris dictum dui in eros fermentum sodales. Aliquam sodales pulvinar urna non gravida. Quisque dapibus luctus neque, quis aliquet elit dapibus non. Morbi nec velit elit. Nulla euismod consectetur libero, quis congue eros sodales nec. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed sed elementum odio. Mauris tincidunt lectus nec auctor tristique. Nunc et commodo lectus, a finibus erat.")
+st.write("La diabetes tipo 2 es una enfermedad cronica que representa un desafío significativo para la salud publica mundial, con una prevalencia en aumento y graves riesgos para la salud. En paralelo, el avance tecnologico, especialmente en el campo del Machine Learning (ML), ofrece oportunidades para mejorar el diagnostico y tratamiento de enfermedades. Este estudio propone el desarrollo de un modelo de diagnostico de diabetes tipo 2 basado en ML y Deep Learning (DL), con el objetivo de proporcionar una herramienta precisa y temprana para la deteccion de esta enfermedad. Se utilizarán técnicas avanzadas de ML y DL para aprender de datos pasados y extraer características complejas, con el fin de crear un modelo que pueda ser implementado en una aplicacion web interactiva. Esta aplicación permitira a los usuarios ingresar síntomas relacionados con la diabetes tipo 2 y recibir una evaluacion de riesgo personalizada. Los resultados esperados incluyen un modelo preciso y funcional, así como una aplicacion web accesible que pueda mejorar la deteccion temprana y el tratamiento oportuno de la diabetes tipo 2, contribuyendo así a una atencion médica más efectiva y personalizada.")
+
+with open("./assets/report.pdf", "rb") as pdf_file:
+    report = base64.b64encode(pdf_file.read()).decode('utf-8')
+
+    pdf_display = F'<iframe src="data:application/pdf;base64,{report}" width="700" height="1000" type="application/pdf"></iframe>'
+    st.markdown(pdf_display, unsafe_allow_html=True)

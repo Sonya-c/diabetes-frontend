@@ -3,6 +3,10 @@ import streamlit as st
 import pandas as pd 
 from actions.predict import predict 
 
+from utils.config import set_config 
+
+set_config("Prototipo")
+
 st.header("Prototipo", divider=True)
 
 indicators = {}
@@ -73,3 +77,5 @@ if submitted:
         st.subheader("Información adicional")
 
         st.info(f"BMI {result['BMI']:.2f}: {result['status']}")
+
+        st.link_button("Evaluanos", "/review")
