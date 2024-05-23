@@ -1,6 +1,8 @@
 
 import streamlit as st
+
 from st_pages import get_pages, get_script_run_ctx 
+from streamlit_theme import st_theme
 
 PAGES = {
     "app": {
@@ -60,7 +62,14 @@ def set_config(
     )  
     
     with st.sidebar:
-        st.image("assets/img/uninorte-logo.png", use_column_width=True) 
+        theme = st_theme()
+        print(theme)
+
+        if theme["base"] == 'dark':
+            st.image("assets/img/uninorte-logo.png", use_column_width=True) 
+        else: 
+            st.image("assets/img/uninorte-logo-light.png", use_column_width=True)  
+
         st.divider()
 
         for page_link in PAGES.values():
