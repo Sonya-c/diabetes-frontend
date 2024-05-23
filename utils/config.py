@@ -65,7 +65,7 @@ def set_config(
         theme = st_theme()
         print(theme)
 
-        if theme["base"] == 'dark':
+        if theme != None and theme["base"] == 'dark':
             st.image("assets/img/uninorte-logo.png", use_column_width=True) 
         else: 
             st.image("assets/img/uninorte-logo-light.png", use_column_width=True)  
