@@ -63,7 +63,6 @@ def set_config(
     
     with st.sidebar:
         theme = st_theme()
-        print(theme)
 
         if theme != None and theme["base"] == 'dark':
             st.image("assets/img/uninorte-logo.png", use_column_width=True) 
