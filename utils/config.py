@@ -9,7 +9,7 @@ PAGES = {
         "page": "app.py",
         "label": "Home",
         "icon": "🏠",
-        "hidden": False,
+        "hidden": True,
     },
     "prototipo": {
         "page": "./pages/prototipo.py",
