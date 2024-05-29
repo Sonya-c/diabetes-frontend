@@ -9,25 +9,25 @@ PAGES = {
         "page": "app.py",
         "label": "Home",
         "icon": "🏠",
-        "hidden": True,
+        "hidden": False,
     },
     "prototipo": {
         "page": "./pages/prototipo.py",
         "label": "Prototipo",
         "icon": "⚛️",
-        "hidden": True,
+        "hidden": False,
     },
     "review": {
         "page": "./pages/review.py",
         "label": "Evaluanos",
         "icon": "⭐",
-        "hidden": False,
+        "hidden": True,
     },
     "about": {
         "page": "./pages/about.py",
         "label": "Sobre Nosotros",
         "icon": "👥",
-        "hidden": True,
+        "hidden": False,
     },
 }
 

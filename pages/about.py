@@ -10,7 +10,7 @@ cols = st.columns(3)
 
 
 with cols[0]:
-    st.image("assets/img/sonya-wins.jpg")
+    st.image("assets/img/sonya-wins.png")
     st.write("**Sonya Castro**")
     st.write("""
         Ingeniería de Sistemas
@@ -26,7 +26,7 @@ with cols[0]:
     )
     
 with cols[1]:
-    st.image("assets/img/señorito refri.png")
+    st.image("assets/img/señorito fifi.png")
     st.write("**Jeffrey Felix**")
     st.write("""
         Ingeniería de Sistemas
@@ -42,7 +42,7 @@ with cols[1]:
     )
 
 with cols[2]:
-    st.image("assets/img/dario.jpg")
+    st.image("assets/img/mario.png")
     st.write("**Dario Mejia**")
     st.write("""
         Ingeniería de Sistemas
