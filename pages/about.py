@@ -27,7 +27,7 @@ with cols[0]:
     
 with cols[1]:
     st.image("assets/img/señorito refri.png")
-    st.write("**Fifi Felix**")
+    st.write("**Jeffrey Felix**")
     st.write("""
         Ingeniería de Sistemas
         Universidad del Norte
@@ -43,7 +43,7 @@ with cols[1]:
 
 with cols[2]:
     st.image("assets/img/dario.jpg")
-    st.write("**Mario Valencia**")
+    st.write("**Dario Valencia**")
     st.write("""
         Ingeniería de Sistemas
         Universidad del Norte
