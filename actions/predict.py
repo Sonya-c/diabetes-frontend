@@ -1,11 +1,8 @@
-import os
 import requests
-from dotenv import load_dotenv
 from const import GenHlth_scale, Education_scale
 
-load_dotenv()
-
-API_BASE_URL = os.getenv('API_BASE_URL', "http://127.0.0.1:8000")
+# API_BASE_URL = "http://127.0.0.1:8000"
+API_BASE_URL = 'https://apps-sonya-wins-7572706e.koyeb.app/'
 
 def predict(features):
     body = {}
