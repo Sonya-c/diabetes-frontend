@@ -27,7 +27,7 @@ PAGES = {
         "page": "./pages/about.py",
         "label": "Sobre Nosotros",
         "icon": "👥",
-        "hidden": False,
+        "hidden": True,
     },
 }
 
