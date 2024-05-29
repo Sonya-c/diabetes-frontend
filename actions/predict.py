@@ -2,7 +2,7 @@ import requests
 from const import GenHlth_scale, Education_scale
 
 # API_BASE_URL = "http://127.0.0.1:8000"
-API_BASE_URL = "https://apps-sonya-wins-7572706e.koyeb.app/"
+API_BASE_URL = "https://apps-sonya-wins-7572706e.koyeb.app"
 
 def predict(features):
     body = {}
@@ -50,7 +50,6 @@ def predict(features):
     elif 70 <= age <= 74: age_category = 11
     elif 75 <= age <= 79: age_category = 12
     elif age >= 80: age_category = 13
-    else: age_category = 0 
 
     body["Age"] = age_category
 
@@ -67,9 +66,10 @@ def predict(features):
     elif 35000 <= income < 50000: income_category = 6
     elif 50000 <= income < 75000: income_category = 7
     elif income >= 75000: income_category = 8
-    else: income_category = 0
 
     body["Income"] = income_category
+
+    print(body)
 
     response = requests.post(
         f"{API_BASE_URL}/predict",
@@ -82,7 +82,8 @@ def predict(features):
         raise Exception(f"Key error. response code = {response.status_code}")
     
     data = response.json()
-
+    print(data)
+    
     return {
         "prediction": bool(data["diabetes_prediction"]),
         "BMI": BMI,

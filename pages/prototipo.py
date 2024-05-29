@@ -39,9 +39,9 @@ if submitted:
             st.subheader("Resultados")
 
             if result["prediction"]:
-                st.success('Baja probabilidad de tener diabetes tipo II', icon="✅")
+                st.error("Alta probabilidad de sufrir diabetes tipo II", icon="🚨")                
             else:
-                st.error("Alta probabilidad de sufrir diabetes tipo II", icon="🚨")
+                st.success('Baja probabilidad de tener diabetes tipo II', icon="✅")
 
             st.subheader("Información adicional")
 
