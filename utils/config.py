@@ -15,13 +15,13 @@ PAGES = {
         "page": "./pages/prototipo.py",
         "label": "Prototipo",
         "icon": "⚛️",
-        "hidden": False,
+        "hidden": True,
     },
     "review": {
         "page": "./pages/review.py",
         "label": "Evaluanos",
         "icon": "⭐",
-        "hidden": True,
+        "hidden": False,
     },
     "about": {
         "page": "./pages/about.py",
