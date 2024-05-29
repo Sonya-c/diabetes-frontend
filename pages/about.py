@@ -43,7 +43,7 @@ with cols[1]:
 
 with cols[2]:
     st.image("assets/img/dario.jpg")
-    st.write("**Dario Valencia**")
+    st.write("**Dario Mejia**")
     st.write("""
         Ingeniería de Sistemas
         Universidad del Norte
