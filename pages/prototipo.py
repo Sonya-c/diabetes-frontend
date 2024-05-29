@@ -33,17 +33,20 @@ with st.form(key='main_form'):
 if submitted:
 
     with st.spinner("Cargando..."):
-        result = predict(indicators)
-        
-        st.subheader("Resultados")
+        try:
+            result = predict(indicators)
+            
+            st.subheader("Resultados")
 
-        if result["prediction"]:
-            st.success('Baja probabilidad de tener diabetes tipo II', icon="✅")
-        else:
-            st.error("Alta probabilidad de sufrir diabetes tipo II", icon="🚨")
+            if result["prediction"]:
+                st.success('Baja probabilidad de tener diabetes tipo II', icon="✅")
+            else:
+                st.error("Alta probabilidad de sufrir diabetes tipo II", icon="🚨")
 
-        st.subheader("Información adicional")
+            st.subheader("Información adicional")
 
-        st.info(f"BMI {result['BMI']:.2f}: {result['status']}")
+            st.info(f"BMI {result['BMI']:.2f}: {result['status']}")
 
-        st.link_button("Evaluanos", "/review")
+            st.link_button("Evaluanos", "/review")
+        except:
+            st.toast('Ocurrio un error inesperado. Por favor, intente nuevamente.')
