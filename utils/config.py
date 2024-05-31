@@ -11,6 +11,12 @@ PAGES = {
         "icon": "🏠",
         "hidden": False,
     },
+    "EDA": {
+        "page": "./pages/EDA.py",
+        "label": "EDA",
+        "icon": "📊",
+        "hidden": False,
+    },
     "prototipo": {
         "page": "./pages/prototipo.py",
         "label": "Prototipo",
