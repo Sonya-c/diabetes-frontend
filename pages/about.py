@@ -12,11 +12,13 @@ cols = st.columns(3)
 with cols[0]:
     st.image("assets/img/sonya-wins.png")
     st.write("**Sonya Castro**")
-    st.write("""
-        Ingeniería de Sistemas
-        Universidad del Norte
-        Barranquilla, Colombia
-    """)
+    st.markdown("""
+        <p>
+            Ingeniería de Sistemas</br>
+            Universidad del Norte</br>
+            Barranquilla, Colombia
+        </p>
+    """, unsafe_allow_html=True)
     st.write("sonyac@uninorte.edu.co")
     st.link_button(
         "Ver Linkedin",
@@ -28,11 +30,13 @@ with cols[0]:
 with cols[1]:
     st.image("assets/img/señorito fifi.png")
     st.write("**Jeffrey Felix**")
-    st.write("""
-        Ingeniería de Sistemas
-        Universidad del Norte
-        Barranquilla, Colombia
-    """)
+    st.markdown("""
+        <p>
+            Ingeniería de Sistemas</br>
+            Universidad del Norte</br>
+            Barranquilla, Colombia
+        </p>
+    """, unsafe_allow_html=True)
     st.write("felixj@uninorte.edu.co")
     st.link_button(
         "Ver Linkedin",
@@ -44,11 +48,13 @@ with cols[1]:
 with cols[2]:
     st.image("assets/img/Mario.png")
     st.write("**Dario Mejia**")
-    st.write("""
-        Ingeniería de Sistemas
-        Universidad del Norte
-        Barranquilla, Colombia
-    """)
+    st.markdown("""
+        <p>
+            Ingeniería de Sistemas</br>
+            Universidad del Norte</br>
+            Barranquilla, Colombia
+        </p>
+    """, unsafe_allow_html=True)
     st.write("jdario@uninorte.edu.co")
     st.link_button(
         "Ver Linkedin",
@@ -62,19 +68,24 @@ cols = st.columns(2)
 
 with cols[0]:
     st.write("**Eduardo Angulo**")
-    st.write("""
-        Ingeniería de Sistemas
-        Universidad del Norte
-        Barranquilla, Colombia
-    """)
+    st.markdown("""
+        <p>
+            Ingeniería de Sistemas</br>
+            Universidad del Norte</br>
+            Barranquilla, Colombia
+        </p>
+    """, unsafe_allow_html=True)
     st.write("edangulo@uninorte.edu.co")
     
 with cols[1]:
     st.write("**Wilson Nieto**")
-    st.write("""
-        Ingeniería de Sistemas
-        Universidad del Norte
-        Barranquilla, Colombia
-    """)
+    st.markdown("""
+        <p>
+            Ingeniería de Sistemas</br>
+            Universidad del Norte</br>
+            Barranquilla, Colombia
+        </p>
+    """, unsafe_allow_html=True)
+
     st.write("wnieto@uninorte.edu.co")
 

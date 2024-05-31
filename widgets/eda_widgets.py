@@ -10,7 +10,7 @@ sns.set_palette("Set2")
 palette = sns.color_palette()
 
 def pie_plot(df):
-    labels=["Non-Diabetic","Diabetic"]
+    labels=["No diabetico","Diabetico"]
     
     fig, ax = plt.subplots(figsize=(20,5))
     ax.pie(
@@ -59,8 +59,8 @@ def dist(df, col):
 
     if col == "BMI":
         bins = [0, 18.5, 24.9, 29.9, float('inf')]
-        labels = [1,2,3,4]
-        df['BMI_bins'] = pd.cut(df['BMI'], bins=bins, labels=labels)
+        bin_labels = [1,2,3,4]
+        df['BMI_bins'] = pd.cut(df['BMI'], bins=bins, labels=bin_labels)
         col = "BMI_bins"
 
     ratio = 3
@@ -71,7 +71,7 @@ def dist(df, col):
     .value_counts(1)
     .sort_index()
     .plot(ax=ax,kind='bar', zorder=3, color=palette)).spines[['top','right', 'left']].set_visible(False)
-    ax.set_xlabel('Without Diabetes',size=8)
+    ax.set_xlabel('Sin Diabetes',size=8)
 
     if labels.get(col, None) != None and col != "Education":
         ax.set_xticklabels(labels.get(col))
@@ -84,7 +84,7 @@ def dist(df, col):
     .value_counts(1)
     .sort_index()
     .plot(ax=ax2, kind='bar', zorder=3, color=palette)).spines[['top','right', 'left']].set_visible(False)
-    ax2.set_xlabel('With Diabetes',size=8)
+    ax2.set_xlabel('Con Diabetes',size=8)
     if labels.get(col, None) != None and col != "Education":
         ax2.set_xticklabels(labels.get(col))
 
@@ -97,3 +97,9 @@ def dist(df, col):
     if col == "Education":
         for i, label in enumerate(labels[col]):
             st.write(f"{i + 1}. {label}")    
+
+def outliner_plot(df, col):
+    fig, ax = plt.subplots(figsize=(5, 3))
+
+    sns.boxplot(x = col, data = df, palette='Set2')
+    st.pyplot(fig)

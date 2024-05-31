@@ -52,6 +52,7 @@ with col1:
     st.write(content.INTRODUCCION)
     
     st.subheader("Problema")
+    st.image("assets/img/problema.png", caption="Árbol del problema")
 
     st.subheader("Justificación")
     st.write(content.JUSTIFICACION)
@@ -68,17 +69,12 @@ with col1:
     st.subheader("Aspectos Teóricos")
     st.write(content.ASPECTOS_TEORICOS)
 
+
 with col2:
     st.subheader("Diseño solución (arquitectura)")
     st.image(
         "assets/img/arch.png",
         caption="Arquitectura de despliegue"
-    )
-
-    st.subheader("Prototipo")
-    st.link_button(
-        "Ir a prototipo",
-        "/prototipo"
     )
 
     st.subheader("Resultados")
