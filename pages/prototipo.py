@@ -20,7 +20,12 @@ with st.form(key='main_form'):
 
         if type == "number":
             value, min_value, max_value, step = field[4]
-            ans = st.number_input(question,min_value, max_value, value, step,help=tip)
+            
+            if feat in ["MentHlth", "PhysHlth"]:
+                ans = st.slider(question,min_value, max_value, value, step,help=tip)
+            else:
+                ans = st.number_input(question,min_value, max_value, value, step,help=tip)
+            
         elif type == "select":
             ans = st.selectbox(question, field[4], help=tip)
         else: # Bin

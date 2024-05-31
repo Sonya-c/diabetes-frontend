@@ -25,8 +25,13 @@ FORM_SCHEMA = [
     ("Education", "select", "Educación", None, Education_scale.keys()),
     ("Income", "number", "Ingreso (dolares)", None, (0.0, 0.0, None, 100.0)),
 
+
+    ("GenHlth", "select", "¿Cómo diría que es su salud en general?", None, GenHlth_scale.keys()),
+
     # ¿Bebedores empedernidos? (hombres adultos que toman mas de 14 tragos por semana y mujeres adultas que toman mas de 7 tragos por semana)
     ("AlcoholConsump", "number", "¿Cúantos tragos bebe por semana?", None, (0, 0, None, 1)),
+    ("MentHlth", "number", "¿Por cúantos de los últimos 30 días su salud mental no fue buena?", "Incluye estrés, depresión y problemas con las emociones", (0, 0, 30, 1)),
+    ("PhysHlth", "number", "¿Por cúantos de los últimos 30 días su salud fisica no fue buena?", "Incluye enfermedades físicas y lesiones", (0, 0, 30, 1)),
 
     ("HighBP", "bin", "¿Tiene presion arterial alta?", None),
     ("HighChol", "bin", "¿Tiene colesterol alto?", None),
@@ -35,10 +40,6 @@ FORM_SCHEMA = [
     ("HeartDiseaseorAttack", "bin", "¿Tiene enfermedad coronaria o infarto de miocardio?", None),
     ("PhysActivity", "bin", "¿Ha realizado actividad física en los ultimos 30 días? (Sin incluir el trabajo)", None),
     ("DiffWalk", "bin", "¿Tiene serias dificultades para caminar o subir escaleras?", None),
-
-    ("GenHlth", "select", "¿Cómo diría que es su salud en general?", None, GenHlth_scale.keys()),
-    ("MentHlth", "number", "¿Por cúantos de los últimos 30 días su salud mental no fue buena?", "Incluye estrés, depresión y problemas con las emociones", (0, 0, 30, 1)),
-    ("PhysHlth", "number", "¿Por cúantos de los últimos 30 días su salud fisica no fue buena?", "Incluye enfermedades físicas y lesiones", (0, 0, 30, 1))
 ]
 
 
