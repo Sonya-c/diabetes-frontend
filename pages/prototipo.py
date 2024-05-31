@@ -33,7 +33,7 @@ with st.form(key='main_form'):
         
         indicators[feat] = ans
 
-    submitted = st.form_submit_button('Enviar')
+    submitted = st.form_submit_button('Enviar', type="primary")
 
 if submitted:
 
