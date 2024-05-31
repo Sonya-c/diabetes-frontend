@@ -42,7 +42,7 @@ with cols[1]:
     )
 
 with cols[2]:
-    st.image("assets/img/mario.png")
+    st.image("assets/img/Mario.png")
     st.write("**Dario Mejia**")
     st.write("""
         Ingeniería de Sistemas
