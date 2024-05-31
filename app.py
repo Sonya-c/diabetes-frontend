@@ -1,24 +1,101 @@
 import streamlit as st 
+import pandas as pd 
+import streamlit_shadcn_ui as ui
 
 from utils.config import set_config 
+import const as content
+
+@st.cache_data(show_spinner=False)
+def get_file(path):
+    with open(path, "rb") as f:
+        return f.read()
 
 set_config("Home")
 
-st.title("Diseño e Implementaión de una Aplicación para el Diagnostico y Detecciónn Temprana de Diabetes Tipo 2")
-st.write("Sonya Castro; Jeffrey Felix; Dario Mejia; Wilson Nieto; Eduardo Angulo.")
+st.image("assets/img/banner.png", use_column_width=True)
+st.header(content.TITLE)
 
-st.divider()
+cols = st.columns(5)
+with cols[0]:
+    st.write("**Sonya Castro**")
 
-with open("./assets/report.pdf", "rb") as pdf_file:
-    report = pdf_file.read()
+with cols[1]:
+    st.write("**Jeffrey Felix**")
+
+with cols[2]:
+    st.write("**Dario Mejia**")
+
+with cols[3]:
+    st.write("**Eduardo Angulo**")
+
+with cols[4]:
+    st.write("**Wilson Nieto**")
+
+
+with ui.card("Resumen"):
+    # st.subheader("Abstract")
+    ui.element("p", children=[content.ABSTRACT])
 
 st.download_button(
-    'Descargar informe',
-    data=report,
+    'Descargar informe completo',
+    data=get_file("./assets/report.pdf"),
     file_name="report.pdf",
     mime='application/octet-stream'
 )
 
-st.subheader("Abstract")
-st.write("La diabetes tipo 2 es una enfermedad cronica que representa un desafío significativo para la salud publica mundial, con una prevalencia en aumento y graves riesgos para la salud. En paralelo, el avance tecnologico, especialmente en el campo del Machine Learning (ML), ofrece oportunidades para mejorar el diagnostico y tratamiento de enfermedades. Este estudio propone el desarrollo de un modelo de diagnostico de diabetes tipo 2 basado en ML y Deep Learning (DL), con el objetivo de proporcionar una herramienta precisa y temprana para la deteccion de esta enfermedad. Se utilizarán técnicas avanzadas de ML y DL para aprender de datos pasados y extraer características complejas, con el fin de crear un modelo que pueda ser implementado en una aplicacion web interactiva. Esta aplicación permitira a los usuarios ingresar síntomas relacionados con la diabetes tipo 2 y recibir una evaluacion de riesgo personalizada. Los resultados esperados incluyen un modelo preciso y funcional, así como una aplicacion web accesible que pueda mejorar la deteccion temprana y el tratamiento oportuno de la diabetes tipo 2, contribuyendo así a una atencion médica más efectiva y personalizada.")
+st.divider()
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.subheader("Introducción")
+    st.write(content.INTRODUCCION)
+    
+    st.subheader("Problema")
+
+    st.subheader("Justificación")
+    st.write(content.JUSTIFICACION)
+
+    st.subheader("Objetivos")
+    st.write(content.OBJECTIVOS)
+
+    st.subheader("Metodología")
+    st.image(
+        "assets/crips_ml.png",
+        caption="CRIPS-ML(Q) | Imagen por Abid Ali Awan"
+    )
+
+    st.subheader("Aspectos Teóricos")
+    st.write(content.ASPECTOS_TEORICOS)
+
+with col2:
+    st.subheader("Diseño solución (arquitectura)")
+    st.image(
+        "assets/img/arch.png",
+        caption="Arquitectura de despliegue"
+    )
+
+    st.subheader("Prototipo")
+    st.link_button(
+        "Ir a prototipo",
+        "/prototipo"
+    )
+
+    st.subheader("Resultados")
+    st.write(content.RESULTADOS)
+    st.image("assets/img/cm_rf.png")
+    st.image("assets/img/cm_esemble.png")
+    df = pd.DataFrame(content.RESULTADOS_TABLA)
+    df = df.set_index('modelo')
+    st.data_editor(df)
+
+    
+st.subheader("Conclusiones")
+st.write(content.CONCLUSIONES)
+
+
+
+
+
+
 
