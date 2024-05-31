@@ -86,12 +86,5 @@ with col2:
     st.data_editor(df)
 
     
-st.subheader("Conclusiones")
-st.write(content.CONCLUSIONES)
-
-
-
-
-
-
-
+    st.subheader("Conclusiones")
+    st.write(content.CONCLUSIONES)
