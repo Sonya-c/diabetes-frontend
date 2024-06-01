@@ -12,7 +12,7 @@ st.header("Prototipo", divider=True)
 
 indicators = {}
 
-with st.form(key='main_form'):
+with st.form(key='main_form', clear_on_submit=True):
     st.subheader("Formulario")
 
     for field in FORM_SCHEMA: 
@@ -33,7 +33,9 @@ with st.form(key='main_form'):
         
         indicators[feat] = ans
 
-    submitted = st.form_submit_button('Enviar', type="primary")
+    st.divider()
+    submitted = st.form_submit_button('Enviar', type="primary", use_container_width=True)
+    
 
 if submitted:
 
