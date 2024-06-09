@@ -40,7 +40,7 @@ with cols[1]:
     st.write("felixj@uninorte.edu.co")
     st.link_button(
         "Ver Linkedin",
-        "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "https://www.linkedin.com/in/jeffrey-felix-b45519302/",
         type="secondary",
         use_container_width=True
     )
